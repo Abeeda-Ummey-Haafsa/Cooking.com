@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "js-instruction",
+  "steps": [
+    {
+      "file": "app.js",
+      "description": "\r\n  for (let i = 1; i <= 20; i++) {\r\n    const ingredient = meal[`strIngredient${i}`];\r\n    const measure = meal[`strMeasure${i}`];\r\n    if (ingredient && ingredient.trim() !== \"\") {\r\n      const listItem = document.createElement(\"li\");\r\n      listItem.textContent = `${measure} ${ingredient}`; // Combine measure and ingredient\r\n      ingredientsList.appendChild(listItem);\r\n    }\r\n  }\r\n\r\n  Here,  .trim() function is used to remove the whitespaces from ingredients. This will ensure that the value of ingredient is not null.\r\n\r\n  To know more aboue .trim() : https://www.w3schools.com/jsref/jsref_trim_string.asp",
+      "line": 59
+    }
+  ]
+}

@@ -96,8 +96,8 @@ const displayFoodItem = (items, searchInput, check) => {
 
         `;
       div.style.backgroundImage = `url('${item.strMealThumb}')`;
-      div.style.backgroundSize = "cover"; // Ensure the background image covers the whole card
-      div.style.backgroundPosition = "center"; // Center the background image
+      div.style.backgroundSize = "cover";
+      div.style.backgroundPosition = "center";
     } else {
       // To show the properties by the area name
       div.innerHTML = `
@@ -115,6 +115,9 @@ const displayFoodItem = (items, searchInput, check) => {
             }')">Details</button>
         </div>
       `;
+      div.style.backgroundImage = `url('${item.strMealThumb}')`;
+      div.style.backgroundSize = "cover";
+      div.style.backgroundPosition = "center";
     }
 
     itemContainer.appendChild(div);

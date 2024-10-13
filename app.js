@@ -174,7 +174,7 @@ const handleCart = (meal, button) => {
 
   if (integerCount >= 12) {
     // It will show an alert message when the count reach its limit
-    alert("Your list is full ! ! !");
+    alert("Your list is full ! ! ! Maximum capacity: 11");
     return;
   }
   document.getElementById("count").innerText = integerCount;

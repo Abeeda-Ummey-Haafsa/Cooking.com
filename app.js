@@ -68,6 +68,43 @@ searchButton.addEventListener("click", () => {
   }
 });
 
+const loadAllProduct = () => {
+  fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+    .then((res) => res.json())
+    .then((data) => {
+      displayAllProduct(data);
+    });
+};
+
+const displayAllProduct = (items) => {
+  const displayContainer = document.getElementById("display"); // Make sure the "display" container exists in your HTML
+  displayContainer.innerHTML = ""; // Clear the container if needed
+
+  items.meals.forEach((item) => {
+    console.log(item.strArea);
+    const div = document.createElement("div");
+    div.classList.add("card");
+    div.innerHTML = `
+      <img src="${item.strMealThumb}" alt="Meal Image" class="meal-image gradient">
+      <h6 class="card-meal-title">${item.strMeal}</h6>
+      <h6 class="card-meal-category">${item.strCategory}</h6>
+      <h6 class="card-meal-area">${item.strArea}</h6>
+      <div id="button-container">
+        <button class="card-btn" onClick="handleCart('${item.strMeal}', this)">Add To List</button>
+        <button class="card-btn" onClick="detailsOfSingleItemUsingModal('${item.idMeal}')">Details</button>
+      </div>
+    `;
+
+    div.style.backgroundImage = `url('${item.strMealThumb}')`;
+    div.style.backgroundSize = "cover";
+    div.style.backgroundPosition = "center";
+
+    // Append each card to the container
+    displayContainer.appendChild(div);
+  });
+};
+
+
 const displayFoodItem = (items, searchInput, check) => {
   console.log(items);
   const itemContainer = document.getElementById("result");
@@ -161,7 +198,7 @@ const detailsOfSingleItemUsingModal = (mealId) => {
       document.querySelector(".source-link").href = meal.strSource;
       document.querySelector(".source-link").target = "_blank";
 
-      document.querySelector(".video-link").textContent = "Watch Here"; // Adding Youtube video link in a button
+      document.querySelector(".video-link").textContent = "Watch On YouTube"; // Adding Youtube video link in a button
       document.querySelector(".video-link").href = meal.strYoutube;
       document.querySelector(".video-link").target = "_blank";
 
@@ -194,3 +231,6 @@ const handleCart = (meal, button) => {
   `;
   container.appendChild(div);
 };
+
+
+loadAllProduct();

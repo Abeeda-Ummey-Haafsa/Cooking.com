@@ -24,7 +24,7 @@
     />
   </head>
 
-  <body>
+  <body style="background-color: black;">
     <div>
       <!-- script file cdn -->
       <!-- <script
@@ -148,6 +148,8 @@
         </div>
       </div>
 
+      <div class="container display-container d-flex " id="display"></div>
+
       <!-- MODAL -->
       <div
         class="modal fade text-monospace"
@@ -160,7 +162,7 @@
       >
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <!-- Added scrollable and centered classes -->
-          <div class="modal-content">
+          <div class="modal-content" style="background-color: black;">
             <!-- Modal Header (Title) -->
             <div class="modal-header">
               <h5
@@ -197,7 +199,7 @@
                 >
                   Ingredients
                 </h5>
-                <ul style="font-family: monospace; font-weight: bold"></ul>
+                <ul style="font-family: monospace; font-weight: bold; color: wheat;"></ul>
               </div>
 
               <!-- Process Section -->
@@ -211,7 +213,7 @@
                 >
                   Instructions
                 </h5>
-                <p class="process-section-body"></p>
+                <p class="process-section-body" style="color: wheat;"></p>
               </div>
 
               <div class="source-section">
@@ -230,13 +232,12 @@
 
             <!-- Modal Footer -->
             <div class="modal-footer d-flex g-3">
-              <button type="button" class="btn btn-primary video-section">
+              <button type="button" class="btn btn-outline-primary video-section">
                 <a
                   href="#"
                   class="video-link"
                   style="
                     display: block;
-                    color: white;
                     text-decoration: none;
                     font-weight: light;
                     text-align: center;
